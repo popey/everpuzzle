@@ -1,0 +1,25 @@
+name: everpuzzle
+version: git
+summary: "Everpuzzle"
+description: |
+  Tetris Attack/Pokemon Puzzle clone written in Rust with Ametyhst
+
+grade: stable
+confinement: strict
+
+parts:
+  everpuzzle:
+    plugin: rust
+    source: ./
+    build-packages:
+      - libasound2-dev
+      - libsdl2-dev
+      - cmake
+      - libfreetype6-dev
+      - libexpat1-dev
+
+apps:
+  everpuzzle:
+    command: bin/everpuzzle
+    plugs:
+      - x11
